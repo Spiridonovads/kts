@@ -11,13 +11,9 @@ const dfs = (graph) => {
   }
   function myFn(value) {
     value.forEach((el) => {
-      for (let key in graph) {
-        if (el === key) {
-          arr.push(key);
-          if (graph[key].length > 0) {
-            myFn(graph[key]);
-          }
-        }
+      arr.push(el);
+      if (graph[el].length > 0) {
+        myFn(graph[el]);
       }
     });
   }
